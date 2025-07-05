@@ -23,6 +23,19 @@ def get_weather(city, api_key):
     else:
         print("City not found ar API error")
 
-        
 
+#main App
+def main():
+    print("=== Weather App ===")
 
+    api_key = input("Enter your OpenWeather API key: ").strip()
+
+    while True:
+        city = input("n\Enter city name(or type 'exit' to quit): ")
+        if city.lower() == 'exit':
+            print("Goodbye!")
+            break
+        get_weather(city, api_key)
+
+if __name__ == "__main__":
+    main()
