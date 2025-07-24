@@ -35,6 +35,4 @@ tk.Button(frame, text="Increment", command=increment).grid(row=0, column=0)
 tk.Button(frame, text="Decrement", command=decrement).grid(row=0, column=1)
 tk.Button(app, text="Reset", command=reset).pack(pady=5)
 
-
-
 app.mainloop()
