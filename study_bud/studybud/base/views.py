@@ -8,6 +8,9 @@ from .forms import RoomForm
 #
 
 
+def loginPage():
+    
+
 
 def home(request):
    q = request.GET.get('q') if request.GET.get('q') != None else ''
