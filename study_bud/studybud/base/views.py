@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import Room, Topic
 from .forms import RoomForm
 
@@ -29,14 +29,16 @@ def loginPage(request):
         else:
             messages.error(request, "username OR password does not exit!")
 
-
-
-
-
     context = {}
     return render(request, 'base/login_register.html', context)
 
 
+
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
+
+    
 
 def home(request):
    q = request.GET.get('q') if request.GET.get('q') != None else ''
